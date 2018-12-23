@@ -3,10 +3,33 @@
 
 #include "pch.h"
 #include <iostream>
+// cstdlib Необходима для использованиия функции system();
+#include <cstdlib>
+#include <string>
 
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	/* 
+		Вариант 1. Данный способ работает только для вывода русского текста в консоль,
+		но ввод русских букв работать не будет.
+		(Расскомментируйте строчку ниже)
+	*/
+	//setlocale(LC_ALL, "Russian");
+
+	/*
+		Вариант 2. Меняем кодовую страницу в самой консоли.
+		(Расскомментируйте строчку ниже)
+	*/
+	//system("chcp 1251");	
+
+	string inputText;
+
+    cout << "Привет мир!\n" << "Введите русский текст: ";
+
+	getline(cin, inputText);
+
+	cout << "Вы ввели: ["<<inputText<<"]"<<endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

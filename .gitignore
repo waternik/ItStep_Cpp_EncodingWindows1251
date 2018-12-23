@@ -1,4 +1,5 @@
 /.vs
 *.user
+Debug
+Release
 bin
-obj
